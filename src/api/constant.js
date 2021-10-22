@@ -1,0 +1,1 @@
+export const apiUrl = "http://clients.mindbodyonline.com/api/0_5_1";

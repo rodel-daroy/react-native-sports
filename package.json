@@ -1,0 +1,101 @@
+{
+  "name": "bxr",
+  "version": "1.5.1",
+  "private": true,
+  "scripts": {
+    "start": "node_modules/react-native/packager/packager.sh",
+    "lint": "eslint --cache ./src/.",
+    "test": "TZ='Europe/London' jest --verbose",
+    "watch": "TZ='Europe/London' jest --watch",
+    "test:coverage": "jest --coverage",
+    "flow": "flow",
+    "flow-once": "flow check",
+    "upgrade": "npm-check-updates -u",
+    "check": "npm run lint && npm run test",
+    "postinstall": "cd node_modules; find . -name .babelrc | grep -v packager | xargs rm"
+  },
+  "dependencies": {
+    "RNFReact": "file:./libs/RNFReact.tgz",
+    "babel-runtime": "^6.20.0",
+    "bugsnag-react-native": "^1.2.4",
+    "entities": "^1.1.1",
+    "eslint-plugin-babel": "^4.0.0",
+    "eslint-plugin-moment-utc": "^1.0.0",
+    "http-client": "^4.3.1",
+    "humps": "^2.0.0",
+    "immutable": "^3.8.1",
+    "jest-junit": "^1.5.1",
+    "lodash": "^4.17.4",
+    "numeral": "^2.0.4",
+    "postcode-validator": "^1.2.0",
+    "qs": "^6.3.0",
+    "ramda": "^0.23.0",
+    "react": "15.3.2",
+    "react-immutable-proptypes": "^2.1.0",
+    "react-native": "0.35.0",
+    "react-native-app-intro": "^1.1.5",
+    "react-native-barcode-builder": "^1.0.5",
+    "react-native-beam": "file:./libs/react-native-beam.tgz",
+    "react-native-device-info": "0.27.1",
+    "react-native-google-analytics-bridge": "^4.0.2",
+    "react-native-image-picker": "0.24",
+    "react-native-iphone-x-helper": "^1.2.0",
+    "react-native-modal-picker": "^0.0.16",
+    "react-native-motion-manager": "^0.0.6",
+    "react-native-onesignal": "^3.0.4",
+    "react-native-open-maps": "^0.3.2",
+    "react-native-screen-brightness": "^0.3.2",
+    "react-redux": "^5.0.2",
+    "react-style-proptype": "^1.4.0",
+    "redux": "^3.6.0",
+    "redux-actions": "^1.2.0",
+    "redux-batched-actions": "^0.1.5",
+    "redux-immutable": "^3.0.10",
+    "redux-thunk": "^2.2.0",
+    "reselect": "^2.5.4",
+    "x2js": "^3.1.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "babel-jest": "^18.0.0",
+    "eslint": "^3.13.1",
+    "eslint-plugin-eslint-comments": "^1.0.0",
+    "eslint-plugin-flowtype": "^2.30.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-react": "^6.9.0",
+    "eslint-plugin-react-native": "^2.2.1",
+    "flow-bin": "^0.37.4",
+    "jest": "^18.1.0",
+    "jest-immutable-matchers": "^1.4.0",
+    "mockdate": "^2.0.1",
+    "react-test-renderer": "15.3.2"
+  },
+  "jest": {
+    "haste": {
+      "defaultPlatform": "ios",
+      "platforms": [
+        "android",
+        "ios",
+        "native"
+      ],
+      "providesModuleNodeModules": [
+        "react-native"
+      ]
+    },
+    "moduleNameMapper": {
+      "^[./a-zA-Z0-9$_-]+\\.(bmp|gif|jpg|jpeg|png|psd|svg|webp)$": "RelativeImageStub",
+      "^React$": "<rootDir>/node_modules/react"
+    },
+    "modulePathIgnorePatterns": [
+      "<rootDir>/node_modules/react-native/Libraries/react-native/",
+      "<rootDir>/node_modules/react-native/packager/"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?@rnfdigital/*|react-native|react-clone-referenced-element)"
+    ],
+    "testEnvironment": "node",
+    "testResultsProcessor": "./node_modules/jest-junit",
+    "setupTestFrameworkScriptFile": "<rootDir>/.jest-setup.js"
+  }
+}

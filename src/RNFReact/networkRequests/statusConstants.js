@@ -1,0 +1,5 @@
+/* @flow */
+
+export const REQUEST_FAILED = 'REQUEST_FAILED'
+export const REQUEST_STARTED = 'REQUEST_STARTED'
+export const REQUEST_SUCCEEDED = 'REQUEST_SUCCEEDED'
